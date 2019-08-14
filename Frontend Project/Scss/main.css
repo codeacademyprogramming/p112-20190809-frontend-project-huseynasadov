@@ -4,6 +4,10 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Roboto Condensed", sans-serif;
+  outline: none !important;
+}
+
+body {
   overflow: hidden;
 }
 
@@ -59,6 +63,7 @@ a:hover {
   padding: 90px 0;
   -webkit-transition: .4s all;
   transition: .4s all;
+  overflow: hidden;
 }
 
 .sidenav .times {
@@ -74,6 +79,10 @@ a:hover {
 .sidenav img {
   padding-left: 24px;
   padding-bottom: 20px;
+}
+
+.sidenav ul {
+  overflow: hidden;
 }
 
 .sidenav ul li {
@@ -108,6 +117,7 @@ a:hover {
   height: 0px;
   -webkit-transition: .5s all;
   transition: .5s all;
+  overflow: hidden;
 }
 
 .sidenav ul .accordion a {
@@ -362,7 +372,7 @@ header nav .container .nav ul .li-home {
 header nav .container .nav ul .li-home .dropdown-home {
   position: absolute;
   min-width: 285px;
-  z-index: 1;
+  z-index: 10;
   background-color: #212121;
   -webkit-transform: translateY(30px);
           transform: translateY(30px);
@@ -467,6 +477,7 @@ header nav .container .searching a i {
   display: none;
   -webkit-transition: 0.4s all;
   transition: 0.4s all;
+  z-index: 10;
 }
 
 .search-input input,
@@ -483,5 +494,36 @@ header nav .container .searching a i {
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 0;
   outline: none !important;
+}
+
+main .section-home .owl-carousel {
+  position: relative;
+}
+
+main .section-home .owl-carousel .owl-nav {
+  display: none;
+}
+
+main .section-home .owl-carousel .owl-dots {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+main .section-home .owl-carousel .owl-dots button {
+  display: block;
+}
+
+main .section-home .owl-carousel .owl-dots button span {
+  border-radius: 0;
+  height: 15px;
+  width: 5px;
+  background-color: white;
+}
+
+main .section-home .owl-carousel .owl-dots button.active span {
+  background-color: #ff3115;
 }
 /*# sourceMappingURL=main.css.map */

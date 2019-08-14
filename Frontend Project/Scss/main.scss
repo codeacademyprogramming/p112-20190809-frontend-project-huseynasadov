@@ -3,7 +3,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto Condensed", sans-serif;
-  overflow: hidden;
+  outline: none !important;
+}
+
+body{
+overflow: hidden;
 }
 
 a,
@@ -48,6 +52,7 @@ a:hover {
   z-index: 2;
   padding: 90px 0;
   transition: .4s all;
+  overflow: hidden;
   .times {
     right: 8px;
     border: 3px solid white;
@@ -62,11 +67,13 @@ a:hover {
   }
 
   ul {
+    overflow: hidden;
     li {
       padding: 8px 24px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.342);
       position: relative;
       cursor: pointer;
+
       a {
         color: white;
         font-size: 16px;
@@ -90,6 +97,7 @@ a:hover {
     .accordion{
         height: 0px;
         transition: .5s all;
+        overflow: hidden;
         a{
             color: white;
             display: block;
@@ -276,11 +284,12 @@ header {
             .dropdown-home {
               position: absolute;
               min-width: 285px;
-              z-index: 1;
+              z-index: 10;
               background-color: #212121;
               transform: translateY(30px);
               opacity: 0;
               display: none;
+              
 
               a {
                 display: block;
@@ -288,6 +297,7 @@ header {
                 padding: 10px 14px;
                 font-size: 15px;
                 border-bottom: 1px solid rgb(94, 93, 93);
+                
                 &:first-child {
                   color: #ff3115 !important;
                 }
@@ -296,8 +306,9 @@ header {
                 }
               }
             }
+
             &:hover .dropdown-home {
-              transition: 0.3s all;
+              transition: 0.3s all;     
             }
           }
         }
@@ -359,8 +370,9 @@ header {
   opacity: 0;
   display: none;
   transition: 0.4s all;
+  z-index: 10;
   input,
-  input:focus {
+  input:focus{
     width: 60%;
     height: 60px;
     padding: 0 15px;
@@ -375,3 +387,39 @@ header {
     outline: none !important;
   }
 }
+
+// Main
+// section-Home
+
+main{
+  .section-home{
+    .owl-carousel{
+      position: relative;
+      .owl-nav{
+        display: none;
+      }
+      .owl-dots{
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        button{
+          display: block;
+          span{
+          border-radius: 0; 
+          height: 15px;
+          width: 5px;
+          background-color: white;
+          }
+          &.active{
+            span{
+              background-color: #ff3115;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

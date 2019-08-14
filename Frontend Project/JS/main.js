@@ -6,7 +6,7 @@ $(function () {
         $(this).toggleClass("active");
     });;
 
-    
+
 
     // Dropdown menu 
 
@@ -59,5 +59,14 @@ $(function () {
         })
     });
 
+    // carpousel section home
+
+
+    $('.section-home .owl-carousel').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        items:1  
+    })
 })
 
