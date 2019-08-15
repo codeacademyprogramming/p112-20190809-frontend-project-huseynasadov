@@ -1,4 +1,18 @@
 $(function () {
+
+    //scrool
+
+    let nav = $('nav');
+    let win = $(window);
+    win.on('scroll', function() {
+       var scroll = win.scrollTop();
+       if (scroll < 300) {
+           nav.removeClass("sticky");
+       } else {
+           nav.addClass("sticky");
+       }
+    });
+
     // sosial icons nav
 
     $(".fabs i").click(function () {
@@ -51,10 +65,10 @@ $(function () {
     $(".sidenav ul li").each(function (ind, val) {
         $(val).click(function () {
             let panel = this.nextElementSibling;
-            if (panel.style.height === "145px") {
-                panel.style.height = "0px";
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
             } else {
-                panel.style.height = "145px";
+                panel.style.maxHeight = panel.scrollHeight + "px";
             }
         })
     });
@@ -66,7 +80,117 @@ $(function () {
         loop: true,
         margin: 0,
         nav: true,
-        items:1  
+        items:1,
+        navSpeed:800,
+        autoplay:false,
+        transitionStyle : "fade",
     })
+
+    // section-video
+
+    $(".youtube-video").modalVideo();
+
+    $(".accordion-about .accordions").each(function (ind, val) {
+        $(val).click(function () {
+            $(this).siblings('.active-red').removeClass('active-red');
+				$(this).toggleClass('active-red');    
+            let panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                $(".accordion-about .accordions").each(function (ind, val) {
+                    val.nextElementSibling.style.maxHeight = null;
+                    
+                })
+                panel.style.maxHeight = panel.scrollHeight + "px";           
+            }
+        })
+    });
+
+    // section Our Popular
+    
+    $('#carousel-popular').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        items:3,
+        transitionStyle : "fade",
+        responsive:{
+            576:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:3
+            }
+        }
+    })
+
+    // section-event
+
+    $('#carousel-event').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        items:3,
+        transitionStyle : "fade",
+        responsive:{
+            576:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:3
+            }
+        }
+    })
+
+    // section-staff
+
+    $('#carousel-staff').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        items:3,
+        transitionStyle : "fade",
+        responsive:{
+            576:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:3
+            }
+        }
+    })
+    let owl = $('#carousel-publications');
+    owl.owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        items:4,
+        transitionStyle : "fade",
+        responsive:{
+            576:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:4
+            }
+        }
+    })
+    
 })
+
+
+
 
