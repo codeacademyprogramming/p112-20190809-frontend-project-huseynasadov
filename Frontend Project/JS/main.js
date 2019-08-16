@@ -116,6 +116,9 @@ $(function () {
         items:3,
         transitionStyle : "fade",
         responsive:{
+            0:{
+                items:1
+            },
             576:{
                 items:1
             },
@@ -137,6 +140,9 @@ $(function () {
         items:3,
         transitionStyle : "fade",
         responsive:{
+            0:{
+                items:1
+            },
             576:{
                 items:1
             },
@@ -158,6 +164,9 @@ $(function () {
         items:3,
         transitionStyle : "fade",
         responsive:{
+            0:{
+                items:1
+            },
             576:{
                 items:1
             },
@@ -177,6 +186,9 @@ $(function () {
         items:4,
         transitionStyle : "fade",
         responsive:{
+            0:{
+                items:1
+            },
             576:{
                 items:1
             },
@@ -188,7 +200,60 @@ $(function () {
             }
         }
     })
-    
+
+    // section-people say
+
+    $('#carousel-people-say').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        items:2,
+        navSpeed:500,
+        smartSpeed:1000,
+        autoplay:true,
+        transitionStyle : "fade",
+        responsive:{
+            0:{
+                items:1
+            },
+            576:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:2
+            }
+        }
+    })
+
+    //section-partners
+
+     $('#carousel-partners').owlCarousel({
+        loop: true,
+        margin: 80,
+        nav: true,
+        navSpeed:700,
+        smartSpeed:1500,
+        autoplay:true,
+        transitionStyle : "fade",
+        responsive:{
+            0:{
+                items:1
+            },
+
+            576:{
+                items:2
+            },
+            768:{
+                items:4
+            },
+            992:{
+                items:5
+            }
+        }
+    })
 })
 
 
