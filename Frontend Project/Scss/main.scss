@@ -26,7 +26,6 @@ a:hover {
 }
 
 .overlay-scaleY {
-  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -83,12 +82,11 @@ a:hover {
   &:hover {
     background-color: #ff3115;
   }
-}
+} 
 
 .sidenav {
-  width: 0;
-  min-height: 100%;
   position: fixed;
+  min-height: 100%;
   top: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.9);
@@ -96,6 +94,7 @@ a:hover {
   padding: 90px 0;
   transition: 0.4s all;
   overflow: hidden;
+  width: 0;
   .times {
     right: 8px;
     border: 3px solid white;
@@ -107,6 +106,7 @@ a:hover {
   img {
     padding-left: 24px;
     padding-bottom: 20px;
+    cursor: pointer;
   }
 
   ul {
@@ -239,8 +239,8 @@ a:hover {
   }
 }
 
-// section About Us
-.section-about-us {
+//  Head Title to Sections
+.about-us {
   .about-us-item {
     text-align: center;
     h4 {
@@ -264,8 +264,9 @@ a:hover {
 }
 
 // Header
-
 header {
+
+  // Header Top
   .header-top {
     background-color: rgb(17, 17, 17);
     padding: 4px 0 5px;
@@ -306,6 +307,7 @@ header {
     }
   }
 
+  //Header Contact
   .header-contact {
     padding: 25px 0 20px;
     .row {
@@ -343,10 +345,12 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
       }
     }
   }
 
+  // Nav
   nav {
     background-color: #212121;
     height: 55px;
@@ -354,6 +358,7 @@ header {
       height: 100%;
       display: flex;
       justify-content: space-between;
+      position: relative;
       .nav {
         ul {
           margin: 0%;
@@ -379,23 +384,21 @@ header {
           }
 
           .li-home {
-            position: relative;
             .dropdown-home {
               position: absolute;
               min-width: 285px;
               z-index: 10;
-              background-color: #212121;
+              box-shadow: 0px 4px 13px -3px #232323;
+              background-color: #111;
               transform: translateY(30px);
               opacity: 0;
               display: none;
-
               a {
                 display: block;
                 color: rgb(184, 179, 179) !important;
-                padding: 10px 14px;
+                padding: 15px 14px;
                 font-size: 15px;
-                border-bottom: 1px solid rgb(94, 93, 93);
-
+                border-bottom: 1px solid #222;
                 &:first-child {
                   color: #ff3115 !important;
                 }
@@ -404,7 +407,10 @@ header {
                 }
               }
             }
-
+            .dropdown-mega{
+              left: 12px;
+              right: 14px;
+            }
             &:hover .dropdown-home {
               transition: 0.3s all;
             }
@@ -456,9 +462,9 @@ header {
 }
 
 // Main
-
 main {
-  //section Home
+
+  //Section Home
   .section-home {
     background: #101010;
     .owl-carousel {
@@ -563,7 +569,7 @@ main {
     }
   }
 
-  // section - services
+  // Section Services
   .section-services {
     position: relative;
     top: -80px;
@@ -622,7 +628,7 @@ main {
     }
   }
 
-  // section Video
+  // Section Video 
   .section-video {
     .row {
       padding-bottom: 100px;
@@ -657,6 +663,7 @@ main {
           }
         }
         .overlay-border {
+          z-index: 1000;
           &::before,
           &::after {
             content: "";
@@ -720,7 +727,6 @@ main {
             outline: none;
             font-size: 18px;
             transition: 0.4s all;
-            margin: 5px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -733,6 +739,8 @@ main {
             overflow: hidden;
             transition: 0.3s all;
             padding: 0 10px;
+            line-height: 26px;   
+            padding: 5px 15px 5px;
             p {
               font-size: 16px;
               color: #505050;
@@ -743,7 +751,7 @@ main {
     }
   }
 
-  // section Our Popular
+  // Section Our Popular
   .section-our-popular {
     background-color: #f9f9f9;
     height: 100%;
@@ -886,7 +894,7 @@ main {
     }
   }
 
-  // section acheivements
+  // Section Acheivements
   .section-acheivements {
     overflow: hidden;
     height: 100%;
@@ -960,7 +968,7 @@ main {
     }
   }
 
-  // section Our Events
+  // Section Our Events
   .section-our-events {
     background-color: white !important;
     padding: 100px 0;
@@ -998,7 +1006,7 @@ main {
     }
   }
 
-  // section Our Staffs
+  // Section Our Staffs
   .section-our-staffs {
     .item {
       .popular-img {
@@ -1099,8 +1107,8 @@ main {
                 background-color: #ff3115;
                 margin-right: 6px;
                 border-radius: 50%;
-                transition: .3s all;
-                &:hover{
+                transition: 0.3s all;
+                &:hover {
                   background-color: #b12613;
                 }
                 i {
@@ -1111,7 +1119,7 @@ main {
             }
           }
         }
-        &:hover .team-name{
+        &:hover .team-name {
           display: none;
         }
         &:hover img {
@@ -1125,7 +1133,7 @@ main {
     }
   }
 
-  // section- Join
+  // Section Join
   .section-join {
     padding: 100px 0;
     background-image: url(../Images/cta-bg.jpg);
@@ -1150,7 +1158,7 @@ main {
     }
   }
 
-  //section-our-news
+  // Section Our News
   .section-our-news {
     padding: 100px 0;
     .new-item {
@@ -1224,7 +1232,7 @@ main {
     }
   }
 
-  // section OUR PUBLICATIONS
+  // Section OUR Publications
   .section-our-publications {
     background-color: #f9f9f9;
     padding: 100px 0;
@@ -1235,6 +1243,7 @@ main {
           overflow: hidden;
           img {
             transition: 0.3s all;
+            cursor: pointer;
           }
           img:hover {
             transform: scale(1.2);
@@ -1285,14 +1294,14 @@ main {
     }
   }
 
-  //section-people-say
+  // Section People Say
   .section-people-say {
     padding: 100px 0;
     background-image: url(../Images/testimonial-bg.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center top;
-    .section-about-us {
+    .about-us {
       margin-bottom: 50px;
       h4,
       p {
@@ -1375,9 +1384,12 @@ main {
     }
   }
 
-  //section-partners
+  // Section Partners
   .section-partners {
     padding: 70px 0;
+    .item{
+      cursor: pointer;
+    }
   }
 }
 
@@ -1389,7 +1401,8 @@ footer {
   background-size: cover;
   background-attachment: fixed;
   background-position: center top;
-  //footer head
+
+  // Footer Head
   .footer-head {
     .container {
       position: relative;
@@ -1446,7 +1459,8 @@ footer {
       }
     }
   }
-  //footer-head
+
+  // Footer Body
   .footer-body {
     padding-top: 140px;
     .container {
@@ -1610,7 +1624,8 @@ footer {
       }
     }
   }
-  //footer-footer
+
+  // Footer F ooter
   .footer-footer {
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.15);

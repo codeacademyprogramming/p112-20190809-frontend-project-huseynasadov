@@ -1,7 +1,6 @@
 $(function () {
 
-    //scrool
-
+    // Nav scrool & Sticky
     let nav = $('nav');
     let win = $(window);
     let up = $(".sticky-ups");
@@ -18,32 +17,29 @@ $(function () {
         }
     });
 
-    // sosial icons nav
-
+    // Sosial icons nav
     $(".fabs i").click(function () {
         $(".fabs i").removeClass("active");
         $(this).toggleClass("active");
     });;
 
-
-
     // Dropdown menu 
+    let aHover = $(".li-home .home");
+        aHover.each(function(ind,val){
+            $(val).mouseover(function () {
+                $(val).siblings().css("display", "block");
+                setTimeout(function () {
+                    $(val).siblings().css({ "opacity": "1", "transform": "translateY(18px)" });
+                }, 50)
+        
+            });
+            $(".li-home").mouseleave(function () {
+                $(val).siblings().css({ "opacity": "0", "display": "none", "transform": "translateY(40px)" })
+            });
+        })
+   
 
-    $(".li-home .home").mouseover(function () {
-
-        $(".dropdown-home").css("display", "block");
-        setTimeout(function () {
-            $(".dropdown-home").css({ "opacity": "1", "transform": "translateY(15px)" });
-        }, 50)
-
-    });
-
-    $(".li-home").mouseleave(function () {
-        $(".dropdown-home").css({ "opacity": "0", "display": "none", "transform": "translateY(30px)" })
-    });
-
-    // searching click
-
+    // Searching click
     $(".searching .a-search").click(function () {
         $(".search-input").css("display", "flex");
         setTimeout(function () {
@@ -58,8 +54,7 @@ $(function () {
         }, 200)
     });
 
-    //side Navigation
-
+    // Side Navigation
     $(".menu-bars").click(function () {
         $(".sidenav").css("width", "350px");
     });
@@ -78,9 +73,7 @@ $(function () {
         })
     });
 
-    // carpousel section home
-
-
+    // Carpousel Section Home
     $('.section-home .owl-carousel').owlCarousel({
         loop: true,
         margin: 0,
@@ -91,8 +84,7 @@ $(function () {
         transitionStyle: "fade",
     })
 
-    // section-video
-
+    // Carousel Section Video
     $(".youtube-video").modalVideo();
 
     $(".accordion-about .accordions").each(function (ind, val) {
@@ -112,8 +104,7 @@ $(function () {
         })
     });
 
-    // section Our Popular
-
+    // Carousel Section Our Popular
     $('#carousel-popular').owlCarousel({
         loop: true,
         margin: 20,
@@ -123,6 +114,7 @@ $(function () {
         responsive: {
             0: {
                 items: 1
+                
             },
             576: {
                 items: 1
@@ -136,8 +128,30 @@ $(function () {
         }
     })
 
-    // section-event
+    // Section acheivements Counter
+    $(window).scroll(function () {
+        if ($(this).scrollTop() >= 1900) {
+            $('.acheivements-counter').each(function () {
+                let $this = $(this),
+                    countTo = $this.attr('data-counters');
+                $({ countNum: $this.text() }).animate({
+                    countNum: countTo
+                },
+                {
+                    duration: 1200,
+                    easing: 'linear',
+                    step: function () {
+                        $this.text(Math.ceil(this.countNum));
+                    },
+                    complete: function () {
+                        $this.text(this.countNum);
+                    }
+                });
+            });
+        }
+    });
 
+    // Carousel Section Event
     $('#carousel-event').owlCarousel({
         loop: true,
         margin: 20,
@@ -160,8 +174,7 @@ $(function () {
         }
     })
 
-    // section-staff
-
+    // Carousel Section Staff
     $('#carousel-staff').owlCarousel({
         loop: true,
         margin: 20,
@@ -183,6 +196,8 @@ $(function () {
             }
         }
     })
+
+    //carousel Section Publications
     let owl = $('#carousel-publications');
     owl.owlCarousel({
         loop: true,
@@ -206,8 +221,7 @@ $(function () {
         }
     })
 
-    // section-people say
-
+    // Carousel Section People say
     $('#carousel-people-say').owlCarousel({
         loop: true,
         margin: 20,
@@ -234,8 +248,7 @@ $(function () {
         }
     })
 
-    //section-partners
-
+    //Carousel Section Partners
     $('#carousel-partners').owlCarousel({
         loop: true,
         margin: 80,
@@ -262,8 +275,7 @@ $(function () {
         }
     })
 
-    // scrool up
-
+    // Scrool up
     var toUp = $('.sticky-ups');
     if (toUp.length) {
         win.on('scroll', function () {
@@ -279,8 +291,4 @@ $(function () {
             }, 500)
         });
     }
-
-    //acheivements-counter
-
-
 })
