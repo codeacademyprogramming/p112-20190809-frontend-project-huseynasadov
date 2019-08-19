@@ -1,4 +1,12 @@
 $(function () {
+
+   // Loading 
+	$(window).on( 'load', function() {
+		$(".preloading").delay(3000).fadeOut(200);
+		$(".book").on('click', function() {
+		$(".preloading").fadeOut(200);
+		})
+    })
     
     // Nav scrool & Sticky
     let nav = $('nav');
