@@ -220,7 +220,7 @@ a:hover {
   opacity: 0;
   display: none;
   transition: 0.4s all;
-  z-index: 10;
+  z-index: 100;
   input,
   input:focus {
     width: 60%;
@@ -504,10 +504,14 @@ main {
       position: relative;
       .owl-stage-outer {
         .owl-stage {
-          .owl-item.active {
+          .owl-item.active,.owl-item {
+            height: 100%;
             .item {
+              height: 100%;
               img {
+                height: 800px;
                 opacity: 0.5;
+                object-fit: cover;
               }
               .item-write {
                 @include position;
@@ -696,7 +700,7 @@ main {
             bottom: 50px;
             left: 50px;
             opacity: 0;
-            transition: all 0.3s;
+            transition: all 0.5s;
             z-index: 9;
           }
           &::before {
@@ -707,21 +711,23 @@ main {
             border-right: 5px solid $color-red;
             border-left: 5px solid $color-red;
           }
-          &:hover::before {
-            animation: anim-border-top 0.3s;
-            opacity: 1;
-          }
-          &:hover::after {
-            opacity: 1;
-            animation: anim-border-left 0.3s;
-          }
+          
         }
         &:hover img {
           opacity: 0.5;
         }
-        &:hover i {
+        &:hover a {
           animation-name: iconOpacity;
           animation-duration: 1s;
+        }
+        
+        &:hover .overlay-border::before {
+          animation: anim-border-top .5s;
+          opacity: 1;
+        }
+        &:hover .overlay-border::after {
+          opacity: 1;
+          animation: anim-border-left .5s;
         }
       }
       .youtube-about {

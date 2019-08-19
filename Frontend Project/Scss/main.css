@@ -286,7 +286,7 @@ a:hover {
   display: none;
   -webkit-transition: 0.4s all;
   transition: 0.4s all;
-  z-index: 10;
+  z-index: 100;
 }
 
 .search-input input,
@@ -665,11 +665,22 @@ main .section-home .owl-carousel {
   position: relative;
 }
 
-main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item img {
-  opacity: 0.5;
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item {
+  height: 100%;
 }
 
-main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write {
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item {
+  height: 100%;
+}
+
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item img, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item img {
+  height: 800px;
+  opacity: 0.5;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .item-write {
   position: absolute;
   top: 0;
   left: 0;
@@ -690,17 +701,17 @@ main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .i
           flex-direction: column;
 }
 
-main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write h1 {
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write h1, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .item-write h1 {
   font-size: 60px;
   margin-bottom: 5px;
 }
 
-main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write p {
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write p, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .item-write p {
   font-weight: 500;
   font-size: 20px;
 }
 
-main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write a {
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write a, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .item-write a {
   margin-top: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -717,41 +728,41 @@ main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .i
   transition: 0.3s all;
 }
 
-main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write a:hover {
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write a:hover, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .item-write a:hover {
   background-color: #d42009;
 }
 
-main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write a:first-child {
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write a:first-child, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .item-write a:first-child {
   background-color: #101010;
   color: white;
   margin-right: 35px;
 }
 
-main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write a:first-child:hover {
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .item-write a:first-child:hover, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .item-write a:first-child:hover {
   background-color: #ff3115;
 }
 
-main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .home-slide1 h1 {
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .home-slide1 h1, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .home-slide1 h1 {
   -webkit-animation: translate-right 2s;
           animation: translate-right 2s;
 }
 
-main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .home-slide1 p {
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .home-slide1 p, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .home-slide1 p {
   -webkit-animation: translate-top 1s;
           animation: translate-top 1s;
 }
 
-main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .home-slide1 a {
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .home-slide1 a, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .home-slide1 a {
   -webkit-animation: anim-skewX 1s;
           animation: anim-skewX 1s;
 }
 
-main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .home-slide2-3 {
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .home-slide2-3, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .home-slide2-3 {
   -webkit-animation: translate-top-slow 1s;
           animation: translate-top-slow 1s;
 }
 
-main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .home-slide2-3 h1 {
+main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item.active .item .home-slide2-3 h1, main .section-home .owl-carousel .owl-stage-outer .owl-stage .owl-item .item .home-slide2-3 h1 {
   -webkit-animation: translate-top-slow 2s;
           animation: translate-top-slow 2s;
 }
@@ -915,8 +926,8 @@ main .section-video .row .youtube .overlay-border::before, main .section-video .
   bottom: 50px;
   left: 50px;
   opacity: 0;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   z-index: 9;
 }
 
@@ -930,27 +941,27 @@ main .section-video .row .youtube .overlay-border::after {
   border-left: 5px solid #ff3115;
 }
 
-main .section-video .row .youtube .overlay-border:hover::before {
-  -webkit-animation: anim-border-top 0.3s;
-          animation: anim-border-top 0.3s;
-  opacity: 1;
-}
-
-main .section-video .row .youtube .overlay-border:hover::after {
-  opacity: 1;
-  -webkit-animation: anim-border-left 0.3s;
-          animation: anim-border-left 0.3s;
-}
-
 main .section-video .row .youtube:hover img {
   opacity: 0.5;
 }
 
-main .section-video .row .youtube:hover i {
+main .section-video .row .youtube:hover a {
   -webkit-animation-name: iconOpacity;
           animation-name: iconOpacity;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
+}
+
+main .section-video .row .youtube:hover .overlay-border::before {
+  -webkit-animation: anim-border-top .5s;
+          animation: anim-border-top .5s;
+  opacity: 1;
+}
+
+main .section-video .row .youtube:hover .overlay-border::after {
+  opacity: 1;
+  -webkit-animation: anim-border-left .5s;
+          animation: anim-border-left .5s;
 }
 
 main .section-video .row .youtube-about .video-item h3 {
